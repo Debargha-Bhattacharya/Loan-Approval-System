@@ -1,0 +1,105 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - loan_faq
+  - check_loan_eligibility
+  - provide_tips
+  - start_eligibility_check
+  - start_ekyc
+  - faq
+
+responses:
+  utter_greet:
+  - text: "Hey! Welcome to E-LAP. How can I assist you today?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_try_again:
+  - text: "I'm here if you need someone to talk to. Maybe a joke would help?"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye! Have a great day ahead."
+
+  utter_iamabot:
+  - text: "I am a bot, created by Joydeep Banerjee."
+
+  utter_loan_faq:
+  - text: "Here are some common loan queries:\n
+    1. Minimum income: ₹25,000/month\n
+    2. Interest rates: 8-12%\n
+    3. Documents needed: ID proof, Income proof, Address proof.\n
+    Do you want to check your eligibility now?"
+    buttons:
+      - title: "Check Eligibility"
+        payload: "/start_eligibility_check"
+
+  utter_provide_tips:
+  - text: "To increase loan approval chances:\n
+    1. Maintain a good credit score\n
+    2. Keep a stable income source\n
+    3. Reduce existing debts\n
+    Would you like to check your eligibility now?"
+    buttons:
+      - title: "Check Now"
+        payload: "/start_eligibility_check"
+
+  utter_check_loan_eligibility:
+  - text: "I can guide you through checking your eligibility. Click the button below."
+    buttons:
+      - title: "Check Eligibility"
+        payload: "/start_eligibility_check"
+
+  utter_start_eligibility_check:
+  - text: "Click the button below to check your loan eligibility."
+    buttons:
+      - title: "Go to Eligibility Page"
+        type: "web_url"
+        url: "http://127.0.0.1:5000/"
+
+  utter_start_ekyc:
+  - text: "To complete your KYC, click the button below."
+    buttons:
+      - title: "Start E-KYC"
+        type: "web_url"
+        url: "/kyc/kyc.html"
+
+  utter_not_eligible:
+  - text: "It looks like you might not be eligible for a loan. But don't worry, here are some tips to improve your chances:\n
+  1. Maintain a good credit score 📊\n
+  2. Keep a stable income source 💰\n
+  3. Reduce existing debts 🔻\n
+  4. Ensure all documents are correct 📄✅\n
+  5. Choose the right loan amount based on your eligibility 🔍\n
+  If you need more help, feel free to ask!"
+
+  utter_faq:
+  - text: "I am the E-LAP chatbot, created by Joydeep Banerjee to assist with loan-related queries."
+  
+  utter_default:
+  - text: "I'm not sure how to answer that. Can you rephrase and ask again?"
+
+actions:
+  - utter_start_ekyc
+  - utter_check_loan_eligibility
+  - utter_loan_faq
+  - utter_did_that_help
+  - utter_happy
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

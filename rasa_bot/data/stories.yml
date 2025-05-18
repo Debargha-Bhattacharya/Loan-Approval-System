@@ -1,0 +1,73 @@
+version: "3.1"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_try_again
+  - action: utter_goodbye
+
+- story: User asks about loan eligibility
+  steps:
+  - intent: check_loan_eligibility
+  - action: utter_check_loan_eligibility
+  - intent: affirm
+  - action: utter_start_eligibility_check
+
+- story: User wants to check eligibility
+  steps:
+  - intent: start_eligibility_check
+  - action: utter_start_eligibility_check
+  - intent: affirm
+  - action: utter_start_ekyc
+
+- story: User wants to start E-KYC
+  steps:
+  - intent: start_ekyc
+  - action: utter_start_ekyc
+  - intent: affirm
+  - action: utter_goodbye
+
+- story: General loan FAQs
+  steps:
+  - intent: loan_faq
+  - action: utter_loan_faq
+  - intent: affirm
+  - action: utter_check_loan_eligibility
+
+- story: User asks for loan tips
+  steps:
+  - intent: provide_tips
+  - action: utter_provide_tips
+  - intent: affirm
+  - action: utter_check_loan_eligibility
+
+- story: User asks general FAQ
+  steps:
+  - intent: faq
+  - action: utter_faq
+  - intent: affirm
+  - action: utter_greet

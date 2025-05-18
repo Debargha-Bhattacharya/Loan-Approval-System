@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - E-Lap Banking</title>
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="register-container">
+        <div class="register-card">
+            <div class="card-header">
+                <img src="/login/Screenshot 2025-04-03 090652.png" alt="Logo" class="logo">
+                <h1>Create Account</h1>
+                <p>Banking for secure financial services</p>
+            </div>
+
+            <form id="registerForm" class="register-form">
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="phone" required pattern="[0-9]{10}">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <span class="helper-text">Enter 10-digit mobile number</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-credit-card"></i>
+                        <input type="text" id="account" required pattern="[0-9]{10,16}">
+                        <label for="account">Account Number</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <span class="helper-text">Enter your bank account number</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-code"></i>
+                        <input type="text" id="ifsc" required pattern="[A-Z]{4}[0-9]{7}">
+                        <label for="ifsc">IFSC Code</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <span class="helper-text">Enter 11-character IFSC code</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-building"></i>
+                        <input type="text" id="branch" required>
+                        <label for="branch">Branch Name</label>
+                        <div class="input-highlight"></div>
+                    </div>
+                    <span class="helper-text">Enter your bank branch name</span>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" required>
+                        <label for="password">Password</label>
+                        <i class="fas fa-eye toggle-password"></i>
+                        <div class="input-highlight"></div>
+                    </div>
+                </div>
+
+                <div class="terms-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" required>
+                        <span class="checkmark"></span>
+                        I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="register-btn">
+                    <span>Create Account</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+
+            <div class="login-link">
+                Already have an account? <a href="login.html">Login here</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="register.js"></script>
+</body>
+</html>

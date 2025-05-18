@@ -1,0 +1,252 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Close (X) Button */
+.close-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.close-icon:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+}
+
+/* Logo Styling */
+.logo {
+    width: 150px;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+/* Features Section */
+.features {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #f6f6f6, #ffffff);
+    overflow: hidden;
+}
+
+/* Background Elements */
+.features::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 183, 77, 0.3);
+    border-radius: 50%;
+    filter: blur(50px);
+    z-index: 0;
+}
+
+.features::after {
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background: rgba(77, 208, 225, 0.3);
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: 0;
+}
+
+/* Floating Dots */
+.features .dots {
+    position: absolute;
+    top: 20px;
+    right: 30%;
+    width: 10px;
+    height: 10px;
+    background: #f44336;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0px rgba(255, 87, 34, 0.5), -15px -15px 0px rgba(33, 150, 243, 0.5);
+}
+
+/* Feature Cards */
+.feature {
+    position: relative;
+    background: white;
+    padding: 30px;
+    width: 30%;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+}
+
+.feature img {
+    width: 80px;
+    margin-bottom: 15px;
+}
+
+/* Hover Animations */
+.feature:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Additional Background Elements in Each Feature */
+.feature::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+}
+
+.feature::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+}
+
+/* Features Section Background */
+.features {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 50px;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom, #f6f6f6, #ffffff);
+    overflow: hidden;
+}
+
+/* Ensure the background shapes are visible */
+.background-shapes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Keeps it behind other content */
+}
+
+/* Background Animated Shapes */
+.background-shapes div {
+    position: absolute;
+    opacity: 0.3;
+    z-index: -1;
+    animation: moveShapes 10s infinite alternate ease-in-out;
+}
+
+/* Circle */
+.circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ff6f61;
+    border-radius: 50%;
+    top: 20%;
+    left: 10%;
+    animation-duration: 14s;
+}
+
+/* Square */
+.square {
+    width: 60px;
+    height: 60px;
+    background-color: #42a5f5;
+    top: 60%;
+    left: 75%;
+    animation-duration: 16s;
+}
+
+/* Triangle */
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #26a69a;
+    top: 75%;
+    left: 30%;
+    animation-duration: 18s;
+}
+
+/* Floating Animation */
+@keyframes moveShapes {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    50% {
+        transform: translate(40px, 40px) rotate(20deg);
+    }
+    100% {
+        transform: translate(-40px, -40px) rotate(-20deg);
+    }
+}
+
+
+/* CTA Section */
+.cta {
+    text-align: center;
+    padding: 50px;
+    background-color: #f44336;
+    color: white;
+}
+
+.cta-button {
+    background-color: white;
+    color: #f44336;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ffb3b3;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+    margin-top: auto; /* Push footer to bottom */
+}

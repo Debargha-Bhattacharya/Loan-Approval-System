@@ -1,0 +1,140 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+
+- intent: loan_faq
+  examples: |
+    - What documents are required for a loan?
+    - What are the interest rates?
+    - How long does approval take?
+    - What is the minimum income required?
+    - What documents do I need to apply for a loan?
+    - What is the interest rate for personal loans?
+    - How long does the loan approval process take?
+    - Is there a minimum salary required for a loan?
+    - Can I get a loan without a credit score?
+    - How do I apply for a loan?
+
+
+- intent: check_loan_eligibility
+  examples: |
+    - Am I eligible for a loan?
+    - Can I get a loan?
+    - Will I be approved for a loan?
+    
+- intent: provide_tips
+  examples: |
+    - Give me tips to improve loan eligibility
+    - How can I increase my loan approval chances?
+    - How can I get my loan approved faster?
+    - What should I do to improve my loan eligibility?
+    - Tell me some tips to improve my credit score.
+    - How can I increase my chances of getting a loan?
+
+
+- intent: start_eligibility_check
+  examples: |
+    - I want to check my eligibility
+    - Start the loan eligibility check
+    - How do I apply?
+
+- intent: start_ekyc
+  examples: |
+    - Start E-KYC
+    - How do I complete my KYC?
+    - Verify my KYC
+
+- intent: faq
+  examples: |
+    - What is your name?
+    - Who made you?
+    - What do you do?

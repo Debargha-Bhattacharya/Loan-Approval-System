@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced KYC Verification</title>
+    <link rel="stylesheet" href="kyc.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="kyc-header">
+            <div class="logo-area">
+                <i class="fas fa-shield-alt"></i>
+                <h1>Secure KYC Verification</h1>
+            </div>
+            <p class="header-desc">Complete your verification in 3 simple steps</p>
+        </div>
+
+        <form id="kycForm" class="kyc-form">
+            <div class="progress-bar">
+                <div class="step active">
+                    <div class="step-icon"><i class="fas fa-user"></i></div>
+                    <div class="step-text">Personal</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-home"></i></div>
+                    <div class="step-text">Address</div>
+                </div>
+                <div class="step">
+                    <div class="step-icon"><i class="fas fa-file-alt"></i></div>
+                    <div class="step-text">Documents</div>
+                </div>
+            </div>
+
+            <!-- Personal Information Section -->
+            <div class="form-section active" id="personal">
+                <h2><i class="fas fa-user-circle"></i> Personal Information</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="fullName" required placeholder="Enter your full name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dob">Date of Birth</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar"></i>
+                            <input type="date" id="dob" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nationality">Nationality</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-globe"></i>
+                            <select id="nationality" required>
+                                <option value="">Select Nationality</option>
+                                <!-- Will be populated via JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="male">
+                                <span class="radio-custom"></span>
+                                Male
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="female">
+                                <span class="radio-custom"></span>
+                                Female
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="gender" value="other">
+                                <span class="radio-custom"></span>
+                                Other
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" required placeholder="Enter your email">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="phone-group">
+                            <div class="code-select-wrapper">
+                                <select id="phoneCode" required>
+                                    <option value="">Select Code</option>
+                                    <!-- Will be populated via JavaScript -->
+                                </select>
+                            </div>
+                            <div class="input-with-icon">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" id="phone" required placeholder="Enter your phone number">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="next-btn" onclick="nextSection('address')">
+                    Next Step <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- Address Section -->
+            <div class="form-section" id="address">
+                <h2><i class="fas fa-map-marked-alt"></i> Address Details</h2>
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label for="street">Street Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-road"></i>
+                            <input type="text" id="street" required placeholder="Enter street address">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-city"></i>
+                            <input type="text" id="city" required placeholder="Enter city">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="state">State/Province</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map"></i>
+                            <input type="text" id="state" required placeholder="Enter state">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-globe-americas"></i>
+                            <select id="country" required>
+                                <option value="">Select Country</option>
+                                <!-- Will be populated via JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="zipcode">Postal Code</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-mail-bulk"></i>
+                            <input type="text" id="zipcode" required placeholder="Enter postal code">
+                        </div>
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="previousSection('personal')">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="button" class="next-btn" onclick="nextSection('documents')">
+                        Next Step <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Documents Section -->
+            <div class="form-section" id="documents">
+                <h2><i class="fas fa-file-upload"></i> Document Upload</h2>
+                <div class="document-grid">
+                    <div class="upload-card">
+                        <div class="upload-area" id="idProofUpload">
+                            <i class="fas fa-id-card"></i>
+                            <h3>ID Proof</h3>
+                            <p>Upload Passport or Driver's License</p>
+                            <input type="file" id="idProof" accept="image/*,.pdf" required>
+                            <button type="button" class="upload-btn">Choose File</button>
+                        </div>
+                        <div class="file-info"></div>
+                    </div>
+
+                    <div class="upload-card">
+                        <div class="upload-area" id="addressProofUpload">
+                            <i class="fas fa-home"></i>
+                            <h3>Address Proof</h3>
+                            <p>Upload Utility Bill or Bank Statement</p>
+                            <input type="file" id="addressProof" accept="image/*,.pdf" required>
+                            <button type="button" class="upload-btn">Choose File</button>
+                        </div>
+                        <div class="file-info"></div>
+                    </div>
+
+                    <div class="upload-card">
+                        <div class="upload-area" id="photoUpload">
+                            <i class="fas fa-camera"></i>
+                            <h3>Recent Photo</h3>
+                            <p>Upload a clear face photo</p>
+                            <input type="file" id="photo" accept="image/*" required>
+                            <button type="button" class="upload-btn">Choose File</button>
+                        </div>
+                        <div class="file-info"></div>
+                    </div>
+                </div>
+
+                <div class="terms-section">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmCheck" required>
+                        <span class="checkbox-custom"></span>
+                        <span class="checkbox-text">I confirm that all provided information is accurate</span>
+                    </label>
+                </div>
+
+                <div class="button-group">
+                    <button type="button" class="prev-btn" onclick="previousSection('address')">
+                        <i class="fas fa-arrow-left"></i> Previous
+                    </button>
+                    <button type="submit" class="submit-btn">
+                        Submit Verification <i class="fas fa-check"></i>
+                    </button>
+                </div>
+            </div>
+            <br><br>
+            <button type="button" class="btn" onclick="window.location.href='/home/home-main.html'">
+                Back to Home <i class="fas fa-arrow-right"></i>
+            </button>
+        </form>
+    </div>
+    <script src="kyc.js"></script>
+</body>
+</html>

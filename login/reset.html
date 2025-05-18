@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password - E-LAP</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-left">
+            <div class="brand">
+                <img src="/login/Screenshot 2025-04-03 090652.png" alt="" class="logo">
+                <h1>E-LAP</h1>
+            </div>
+            <div class="illustration">
+                <div class="floating-cards">
+                    <div class="card card-1">
+                        <i class="fas fa-lock"></i>
+                        <span>New Password</span>
+                    </div>
+                    <div class="card card-2">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Confirm Reset</span>
+                    </div>
+                    <div class="card card-3">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Enhanced Security</span>
+                    </div>
+                </div>
+                <div class="circles">
+                    <div class="circle circle-1"></div>
+                    <div class="circle circle-2"></div>
+                    <div class="circle circle-3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="login-right">
+            <div class="login-form-container">
+                <h2>Reset Password</h2>
+                <p>Create a new password for your account</p>
+                
+                <form class="login-form" id="resetPasswordForm">
+                    <div class="form-group">
+                        <label for="newPassword">New Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="newPassword" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                            <span class="input-highlight"></span>
+                        </div>
+                        <div class="password-requirements">
+                            <p>Password must contain:</p>
+                            <ul>
+                                <li id="length">At least 8 characters</li>
+                                <li id="uppercase">One uppercase letter</li>
+                                <li id="lowercase">One lowercase letter</li>
+                                <li id="number">One number</li>
+                                <li id="special">One special character</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="input-group">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" required>
+                            <i class="fas fa-eye toggle-password"></i>
+                            <span class="input-highlight"></span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="login-btn">
+                        <span>Reset Password</span>
+                        <i class="fas fa-check"></i>
+                    </button>
+                </form>
+                
+                <div class="back-to-login">
+                    <a href="login.html">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Back to Login</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="reset.js"></script>
+</body>
+</html>

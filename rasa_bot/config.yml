@@ -1,0 +1,43 @@
+recipe: default.v1
+
+assistant_id: 20250404-001311-brass-tundra
+
+language: en
+
+pipeline:
+- name: WhitespaceTokenizer
+- name: RegexFeaturizer
+- name: LexicalSyntacticFeaturizer
+- name: CountVectorsFeaturizer
+- name: CountVectorsFeaturizer
+  analyzer: char_wb
+  min_ngram: 1
+  max_ngram: 4
+- name: DIETClassifier
+  epochs: 150    # Increased for better training
+  constrain_similarities: true
+  entity_recognition: true
+- name: EntitySynonymMapper
+- name: ResponseSelector
+  epochs: 100
+  constrain_similarities: true
+- name: FallbackClassifier
+  threshold: 0.4    # Increased for better balance
+  ambiguity_threshold: 0.2
+- name: DucklingEntityExtractor    # For extracting dates, numbers, etc.
+  dimensions: ["time", "number", "amount-of-money"]
+- name: SpacyNLP    # Added to enable SpacyEntityExtractor
+  model: "en_core_web_md"
+- name: SpacyEntityExtractor    # Boosts entity recognition accuracy
+  dimensions: ["PERSON", "ORG", "GPE", "MONEY"]
+
+policies:
+- name: MemoizationPolicy
+- name: RulePolicy
+- name: UnexpecTEDIntentPolicy
+  max_history: 5
+  epochs: 150    # Increased for better learning
+- name: TEDPolicy
+  max_history: 10    # Slightly increased for better dialogue context
+  epochs: 150
+  constrain_similarities: true

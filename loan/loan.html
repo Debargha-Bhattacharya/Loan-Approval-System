@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Application</title>
+    <link rel="stylesheet" href="loan.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-card">
+            <div class="form-header">
+                <h1>Loan Application</h1>
+                <p>Please fill in your details to proceed</p>
+            </div>
+
+            <form id="loanForm">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h2>Personal Details</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <label class="radio">
+                                    <input type="radio" name="gender" value="male">
+                                    <span>Male</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="gender" value="female">
+                                    <span>Female</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Marital Status</label>
+                            <div class="radio-group">
+                                <label class="radio">
+                                    <input type="radio" name="married" value="yes">
+                                    <span>Married</span>
+                                </label>
+                                <label class="radio">
+                                    <input type="radio" name="married" value="no">
+                                    <span>Single</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Dependents</label>
+                            <select class="form-select">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3+</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Education</label>
+                            <select class="form-select">
+                                <option value="graduate">Graduate</option>
+                                <option value="not_graduate">Not Graduate</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Employment Status</label>
+                        <div class="radio-group">
+                            <label class="radio">
+                                <input type="radio" name="employment" value="employed">
+                                <span>Employed</span>
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="employment" value="self_employed">
+                                <span>Self Employed</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Information -->
+                <div class="form-section">
+                    <h2>Financial Information</h2>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Monthly Income</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                                <input type="number" placeholder="0.00" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Co-applicant Income</label>
+                            <div class="input-with-icon">
+                                <i class="fas fa-rupee-sign"></i>
+                                <input type="number" placeholder="0.00" class="form-input">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Amount</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                            <input type="number" placeholder="Enter loan amount" class="form-input">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Loan Term (Months)</label>
+                        <select class="form-select">
+                            <option value="12">12 Months (1 Year)</option>
+                            <option value="24">24 Months (2 Years)</option>
+                            <option value="36">36 Months (3 Years)</option>
+                            <option value="48">48 Months (4 Years)</option>
+                            <option value="60">60 Months (5 Years)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Credit & Property -->
+                <div class="form-section">
+                    <h2>Credit & Property Details</h2>
+
+                    <div class="form-group">
+                        <label>Credit Score (300-850)</label>
+                        <div class="input-with-icon">
+                            <input type="number" 
+                                   class="form-input" 
+                                   min="300" 
+                                   max="850" 
+                                   placeholder="Enter your credit score"
+                                   id="creditScore">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Property Area</label>
+                        <select class="form-select">
+                            <option value="urban">Urban</option>
+                            <option value="semiurban">Semiurban</option>
+                            <option value="rural">Rural</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-submit">Submit Application</button>
+                </div>
+            </form>
+        </div>
+    </div>
+ 
+    <script src="loan.js"></script>
+    <script src="loanSteps.js"></script>
+</body>
+</html>

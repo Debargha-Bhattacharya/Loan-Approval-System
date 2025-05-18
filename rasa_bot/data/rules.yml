@@ -1,0 +1,33 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: Provide loan FAQ
+  steps:
+  - intent: loan_faq
+  - action: utter_loan_faq
+
+- rule: Start loan eligibility check
+  steps:
+  - intent: start_eligibility_check
+  - action: utter_start_eligibility_check
+
+- rule: Start eKYC process
+  steps:
+  - intent: start_ekyc
+  - action: utter_start_ekyc
+
+- rule: Handle fallback messages
+  steps:
+  - intent: nlu_fallback
+  - action: utter_default

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Approval Prediction</title>
+    <link rel="stylesheet" href="/Loan_Model/static/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background elements -->
+    <div class="pattern-overlay"></div>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <!-- Main content -->
+    <div class="container">
+        <div class="form-container">
+            <h1>Loan Approval Prediction</h1>
+            <p class="subtitle">Fill in your details to predict loan approval</p>
+            
+            <form id="loanForm">
+                <!-- Personal Information Section -->
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="no_of_dep">Number of Dependents</label>
+                        <select id="no_of_dep" name="no_of_dep" required>
+                            <option value="" disabled selected>Select number of dependents</option>
+                            <option value="0">0 (No dependents)</option>
+                            <option value="1">1 dependent</option>
+                            <option value="2">2 dependents</option>
+                            <option value="3">3+ dependents</option>
+                        </select>
+                        <small class="help-text">Select the number of people who depend on your income</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="grad">Education Level</label>
+                        <select id="grad" name="grad" required>
+                            <option value="" disabled selected>Select education level</option>
+                            <option value="Graduated">Graduated</option>
+                            <option value="Not Graduated">Not Graduated</option>
+                        </select>
+                        <small class="help-text">Select your highest education level</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="self_emp">Employment Status</label>
+                        <select id="self_emp" name="self_emp" required>
+                            <option value="" disabled selected>Select employment status</option>
+                            <option value="No">Salaried</option>
+                            <option value="Yes">Self Employed</option>
+                        </select>
+                        <small class="help-text">Select your employment type</small>
+                    </div>
+                </div>
+
+                <!-- Financial Information Section -->
+                <div class="form-section">
+                    <h2>Financial Information</h2>
+                    
+                    <div class="form-group">
+                        <label for="Annual_Income">Annual Income</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                            <input type="text" id="Annual_Income" name="Annual_Income" placeholder="Enter your annual income" required>
+                        </div>
+                        <small class="help-text">Enter your total annual income</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Assets">Total Assets</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                            <input type="text" id="Assets" name="Assets" placeholder="Enter total assets value" required>
+                        </div>
+                        <small class="help-text">Enter the total value of all your assets</small>
+                    </div>
+                </div>
+
+                <!-- Loan Details Section -->
+                <div class="form-section">
+                    <h2>Loan Details</h2>
+                    
+                    <div class="form-group">
+                        <label for="Loan_Amount">Loan Amount</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-rupee-sign"></i>
+                            <input type="text" id="Loan_Amount" name="Loan_Amount" placeholder="Enter required loan amount" required>
+                        </div>
+                        <small class="help-text">Enter the amount you want to borrow</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Loan_Dur">Loan Duration (Years)</label>
+                        <div class="dual-input">
+                            <input type="range" id="Loan_Dur_slider" min="1" max="20">
+                            <input type="number" id="Loan_Dur" name="Loan_Dur" min="1" max="20" placeholder="Years" required>
+                        </div>
+                        <small class="help-text">Select the loan duration in years</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Cibil">CIBIL Score</label>
+                        <div class="dual-input">
+                            <input type="range" id="Cibil_slider" min="300" max="900">
+                            <input type="number" id="Cibil" name="Cibil" min="300" max="900" placeholder="Score" required>
+                        </div>
+                        <small class="help-text">Enter your CIBIL score (300-900)</small>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-calculator"></i> Predict Loan Approval
+                </button>
+            </form>
+
+            <div id="resultContainer" class="result-container" style="display: none;"></div>
+
+            <div class="tips-container">
+                <h3>Tips for Better Loan Approval Chances:</h3>
+                <ul>
+                    <li>Maintain a CIBIL score above 750</li>
+                    <li>Keep your debt-to-income ratio below 50%</li>
+                    <li>Have stable employment history</li>
+                    <li>Provide accurate financial information</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="/Loan_Model/static/js/script.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html> 
